@@ -172,7 +172,6 @@ public class VerifyLMSApplication {
 		String courseTitile = driver.findElement(By.xpath(".//div[@class='ld-course-navigation-heading']")).getText();
 		
 		assertEquals(courseTitile, "Social Media Marketing", "Course Title is not correct");
-		System.out.println(courseTitile);
 		
 		List<WebElement> elements = driver.findElements(By.xpath(".//input[@value='Mark Complete']"));
 		
