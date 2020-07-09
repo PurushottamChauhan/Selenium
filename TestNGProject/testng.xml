@@ -5,7 +5,7 @@
       <classes>
       	<class name="TestCases.VerifyLMSApplication">
       		<methods>
-        		<include name="verifyWebSiteTitle" />
+        		<include name="completeSimpleLesson" />
      		 </methods>	
       	</class>
       </classes>

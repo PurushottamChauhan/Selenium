@@ -165,9 +165,14 @@ public class VerifyLMSApplication {
 		driverWait.until(ExpectedConditions.elementToBeClickable(By.xpath(".//span[text()='Expand All']")));
 		driver.findElement(By.xpath(".//span[text()='Expand All']")).click();
 		
-		driver.findElements(By.xpath(".//span[@class='ld-topic-title']")).get(0).click();
+		driver.findElements(By.xpath(".//span[@class='ld-topic-title']")).get(1).click();
 		
 		driverWait.until(ExpectedConditions.elementToBeClickable(By.xpath(".//a[text()='Back to Lesson']")));
+		
+		String courseTitile = driver.findElement(By.xpath(".//div[@class='ld-course-navigation-heading']")).getText();
+		
+		assertEquals(courseTitile, "Social Media Marketing", "Course Title is not correct");
+		System.out.println(courseTitile);
 		
 		List<WebElement> elements = driver.findElements(By.xpath(".//input[@value='Mark Complete']"));
 		
@@ -183,10 +188,7 @@ public class VerifyLMSApplication {
 			Reporter.log("Mark Complete not found skipping");
 		}
 		
-		driverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(".//div[text()='Complete']")));
-		String text = driver.findElement(By.xpath(".//div[text()='Complete']")).getText();
 		
-		assertEquals(text, "COMPLETE", "Status of course is not complete");
 	}
 	
 	@AfterMethod
